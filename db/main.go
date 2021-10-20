@@ -23,7 +23,7 @@ func main() {
 	//Exec the Command
 
 	//row := Db.QueryRow(cmd) get 1 record
-	//err := row.Scan(&p.Name, &p.Age) Insert value to argument
+	//err := row.Scan(&p.Name, &p.Age) attach row value to argument(model instance)
 
 	//rows := Db.Query(cmd) get all record match cmd
 
