@@ -27,7 +27,7 @@ func init() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	
+	//User
 	cmdU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		uuid STRING NOT NULL UNIQUE,
@@ -38,6 +38,7 @@ func init() {
 
 	Db.Exec(cmdU)
 
+	//Todo
 	cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		content TEXT,
@@ -46,6 +47,7 @@ func init() {
 
 	Db.Exec(cmdT)
 
+	//Session
 	cmdS := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		uuid STRING NOT NULL UNIQUE,
