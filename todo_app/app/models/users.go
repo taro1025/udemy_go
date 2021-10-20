@@ -12,7 +12,7 @@ type User struct {
 	Email     string
 	PassWord  string
 	CreatedAt time.Time
-	//Todos     []Todo
+	Todos     []Todo
 }
 
 type Session struct {
@@ -97,6 +97,7 @@ func GetUserByEmail(email string) (user User, err error) {
 }
 
 func (u *User) CreateSession() (session Session, err error) {
+	//1. create record
 	session = Session{}
 	cmd1 := `insert into sessions (
 		uuid, 
@@ -109,6 +110,7 @@ func (u *User) CreateSession() (session Session, err error) {
 		log.Println(err)
 	}
 
+	//2. get session and return it
 	cmd2 := `select id, uuid, email, user_id, created_at
 	 from sessions where user_id = ? and email = ?`
 
@@ -137,6 +139,7 @@ func (sess *Session) CheckSession() (valid bool, err error) {
 		valid = false
 		return
 	}
+
 	if sess.ID != 0 {
 		valid = true
 	}
@@ -152,6 +155,7 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 	return err
 }
 
+// = current_user
 func (sess *Session) GetUserBySession() (user User, err error) {
 	user = User{}
 	cmd := `select id, uuid, name, email, created_at FROM users
