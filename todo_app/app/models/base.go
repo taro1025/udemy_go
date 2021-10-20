@@ -1,7 +1,7 @@
 package models
 
 import (
-	"crypto/sha1"
+	"crypto/sha1" //To encode hash for password
 	"database/sql"
 	"fmt"
 	"log"
@@ -11,7 +11,7 @@ import (
 
 	_ "github.com/mattn/go-sqlite3"
 )
-
+//Db ... File models module, you can use anywhere
 var Db *sql.DB
 
 var err error
@@ -27,7 +27,7 @@ func init() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
+	
 	cmdU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		uuid STRING NOT NULL UNIQUE,

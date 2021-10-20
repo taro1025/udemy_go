@@ -1,3 +1,4 @@
 2021/10/20 08:29:19 main.go:12: test
 2021/10/20 08:48:40 main.go:12: test
 2021/10/20 08:54:26 main.go:13: &{0 {webapp.sql 0xc000148100} 0 {0 0} [0xc00015c090] map[] 0 1 0xc0001100c0 false map[0xc00015c090:map[0xc00015c090:true]] map[] 0 0 0 0 <nil> 0 0 0 0 0x40cfe00}
+2021/10/20 10:04:40 main.go:13: &{0 {webapp.sql 0xc0000c4100} 0 {0 0} [0xc0000d6120] map[] 0 1 0xc0000b4060 false map[0xc0000d6120:map[0xc0000d6120:true]] map[] 0 0 0 0 <nil> 0 0 0 0 0x40d0760}
