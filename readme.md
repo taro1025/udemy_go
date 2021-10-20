@@ -9,7 +9,7 @@ UUId
 g unique id
 go get "github.com/google/uuid"
 
-Railsでいうと
+# Railsでいうと
 
 routes.rb >> server.goのStartMainServer()
 
